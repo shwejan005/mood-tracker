@@ -75,6 +75,9 @@ export default async function Dashboard() {
         </TextShimmer>
         <FocusCards cards={cards} />
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 }
