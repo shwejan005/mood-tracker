@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
           className={`${openSans.className} bg-[#dffdd1] text-black antialiased w-full max-w-[1600px] mx-auto text-sm sm:text-base min-h-screen flex flex-col`}
         >
           <Header />
-          {children}
+            {children}
           <Footer />
         </body>
       </html>

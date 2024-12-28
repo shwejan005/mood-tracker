@@ -1,11 +1,11 @@
 function Footer() {
   return (
     <footer className="bg-[#dffdd1] text-green-700 py-6 mt-10">
-      <div className="container mx-auto flex flex-col items-center space-y-4">
-        <p className="text-xl font-semibold">
+      <div className="container mx-auto flex flex-col items-center space-y-4 sm:space-y-6">
+        <p className="text-xl font-semibold text-center sm:text-lg">
           "Track your mood, reflect on your journey, and grow with Zen. 🌱"
         </p>
-        <div className="flex space-x-4">
+        <div className="flex flex-wrap justify-center space-x-6 space-y-4 sm:space-y-0">
           <a
             href="https://twitter.com"
             target="_blank"
@@ -39,7 +39,7 @@ function Footer() {
             </svg>
           </a>
         </div>
-        <p className="text-sm text-green-600">
+        <p className="text-sm text-green-600 text-center">
           &copy; {new Date().getFullYear()} Zen. All rights reserved.
         </p>
       </div>
