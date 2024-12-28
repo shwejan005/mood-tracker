@@ -1,7 +1,14 @@
-import { Geist, Geist_Mono, Fugaz_One, Open_Sans } from "next/font/google"; // Import Fugaz_One
+import { Geist, Geist_Mono, Fugaz_One, Open_Sans, League_Spartan } from "next/font/google"; // Import Fugaz_One
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const openSans = Open_Sans({
+  subsets: ["latin"]
+})
+
+const leagueSpartan = League_Spartan({
   subsets: ["latin"]
 })
 
@@ -26,28 +33,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const header = (
-    <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
-      <h1 className={`${fugaz.className}  text-5xl md:text-6xl lg:text-7xl textGradient`}>
-        Zen
-      </h1>
-    </header>
-  );
-
-  const footer = 
-    <footer className="p-4 sm:p-8">
-      Footer
-    </footer>;
-
   return (
-    <html lang="en">
-      <body
-        className={`${openSans.className} text-slate-700 antialiased w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col`}
-      >
-        {header}
-        {children}
-        {footer}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${openSans.className} bg-[#dffdd1] text-black antialiased w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col`}
+        >
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

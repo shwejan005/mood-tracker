@@ -1,21 +1,44 @@
 import React from 'react';
-import { Fugaz_One } from 'next/font/google';
+import { Fugaz_One, League_Spartan } from 'next/font/google';
+import { SignInButton, SignUpButton } from '@clerk/nextjs';
+import Button from './Button'; // Your custom Button component
 
 const fugaz = Fugaz_One({
-  subsets: ["latin"],
-  weight: ["400"],
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const leagueSpartan = League_Spartan({
+  subsets: ['latin'],
 });
 
 function Hero() {
   return (
     <div className="py-4 md:py-12 flex flex-col gap-4 sm:gap-8">
       <h1
-        className={`${fugaz.className} font-bold text-5xl md:text-7xl sm:text-6xl text-center py-10`}
+        className={`${leagueSpartan.className} font-bold text-5xl md:text-7xl lg:text-6xl text-center py-10`}
       >
-        <span className="textGradient">Zen</span> helps you track your mood{" "}
-        <span className="textGradient">daily</span> and improve it if needed
+        Helps you track your<span className="textGradient"> mood daily</span>
       </h1>
-      <p className='text-lg sm:text-xl md:text-2xl text-center font-semibold'>Create your mood record and track how you feel each day</p>
+      <p className="text-lg sm:text-xl md:text-2xl text-center font-semibold pb-5">
+        Create your mood record and track how you feel each day
+      </p>
+
+      <div className="grid grid-cols-2 gap-4 w-fit mx-auto">
+        {/* SignUpButton wrapped in your custom Button component */}
+        <div className="w-full">
+          <SignUpButton aschild='true'>
+            <Button text="Sign Up" />
+          </SignUpButton>
+        </div>
+
+        {/* SignInButton wrapped in your custom Button component */}
+        <div className="w-full">
+          <SignInButton aschild='true'>
+            <Button text="Log In" dark />
+          </SignInButton>
+        </div>
+      </div>
     </div>
   );
 }
