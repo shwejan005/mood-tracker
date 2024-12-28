@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-green-100 text-green-700 py-6 mt-10">
+    <footer className="bg-[#dffdd1] text-green-700 py-6 mt-10">
       <div className="container mx-auto flex flex-col items-center space-y-4">
         <p className="text-xl font-semibold">
           "Track your mood, reflect on your journey, and grow with Zen. 🌱"
