@@ -1,8 +1,8 @@
-import { Calendar } from "@/components/ui/calendar"
+import { Calendar } from "@/components/ui/calendar";
 import { FocusCards } from '@/components/ui/focus-cards';
 import { TextShimmer } from '@/components/ui/text-shimmer';
 import { UserButton } from '@clerk/nextjs';
-import { auth } from '@clerk/nextjs/server'; 
+import { auth } from '@clerk/nextjs/server';
 import { League_Spartan } from 'next/font/google';
 import Link from 'next/link';
 
@@ -19,46 +19,46 @@ export default async function Dashboard() {
   const details = {
     'Days': 14,
     'Time': '13:14:26',
-    'Date': (new Date()).toDateString()  
+    'Date': (new Date()).toDateString()
   };
 
   const cards = [
     {
       emoji: "🤩",
       title: "Thrilled, enthusiastic, or overjoyed",
-      def : "Excited"
+      def: "Excited"
     },
     {
       emoji: "😊",
       title: "Joyful, content, or positive",
-      def : "Happy"
+      def: "Happy"
     },
     {
       emoji: "😐",
       title: "Indifferent, calm, or balanced",
-      def : "Neutral"
+      def: "Neutral"
     },
     {
       emoji: "😔",
       title: "Down, disappointed, or low energy",
-      def : "Sad"
+      def: "Sad"
     },
     {
       emoji: "😡",
       title: "Frustrated, annoyed, or upset",
-      def : "Angry"
+      def: "Angry"
     },
     {
       emoji: "😰",
       title: "Nervous, stressed, or uneasy",
-      def : "Anxious"
+      def: "Anxious"
     },
   ];
 
   return (
     <div className="flex flex-col flex-1 gap-10 sm:gap-14 md:gap-20 rounded-lg">
       {/* Details Section */}
-      <div className="bg-[#edf8e8] opacity-80 text-green-800 grid grid-cols-1 sm:grid-cols-3 mt-5 text-center rounded-xl shadow-md">
+      <div className="bg-[#edf8e8] text-green-800 grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 rounded-xl shadow-md">
         {Object.keys(details).map((detail, detailIndex) => (
           <div
             key={detailIndex}
@@ -73,23 +73,27 @@ export default async function Dashboard() {
       </div>
 
       {/* Cards Section */}
-      <div className=" rounded-xl min-h-screen flex flex-col items-center shadow-lg bg-[#edf8e8] opacity-80 py-10">
+      <div className="rounded-xl min-h-screen flex flex-col items-center shadow-lg bg-[#edf8e8] py-10">
         <TextShimmer
           duration={3}
-          className='text-4xl font-bold text-center mb-20 [--base-color:theme(colors.green.600)] [--base-gradient-color:theme(colors.green.200)] dark:[--base-color:theme(colors.green.700)] dark:[--base-gradient-color:theme(colors.green.400)]'
+          className="text-4xl font-bold text-center mb-20 [--base-color:theme(colors.green.600)] [--base-gradient-color:theme(colors.green.200)] dark:[--base-color:theme(colors.green.700)] dark:[--base-gradient-color:theme(colors.green.400)]"
         >
-          How are you <span className="textGradient">feeling</span> today?
+          How are you <span className="textGradient">feeling</span> ?
         </TextShimmer>
-        <div className="flex space-x-20">
 
-          <div className="mt-20 mb-14 border-2 border-[#b4d4a7] rounded-xl bg-transparent hover:border-[#87a37a] transition-all duration-300">
-            <Calendar />
+        <div className="flex flex-col sm:flex-row sm:space-x-10 gap-8 sm:gap-0 w-full justify-center items-center px-4">
+          
+          {/* Calendar Section */}
+          <div className="flex justify-center items-center ml-20 sm:w-auto flex-shrink-0 mb-5">
+            <Calendar className="border-2 border-[#b4d4a7] rounded-xl bg-transparent hover:border-[#87a37a] transition-all duration-300" />
           </div>
-        
-         <FocusCards cards={cards} />
+
+          {/* Focus Cards Section */}
+          <div className="flex-1 sm:w-auto">
+            <FocusCards cards={cards} />
+          </div>
 
         </div>
-
       </div>
     </div>
   );

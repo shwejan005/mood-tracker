@@ -9,22 +9,22 @@ const leagueSpartan = League_Spartan({
 function Header() {
   return (
     <header className="flex items-center justify-between p-5">
-      <h1 className={`${leagueSpartan.className} text-5xl md:text-5xl lg:text-5xl textGradient`}>
+      <Link href='/' className={`${leagueSpartan.className} text-5xl md:text-5xl lg:text-5xl textGradient`}>
         Zen
-      </h1>
+      </Link>
       <nav className='textGradient text-md'>
-        <ul className="flex space-x-5">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
+        <ul className="flex space-x-10">
           <li>
             <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/dashboard">Dashboard</Link>
           </li>
           <li>
             <Link href="/journal">Journal</Link>
           </li>
           <li>
-            <Link href="/mood">Mood</Link>
+            <Link href="/pricing">Pricing</Link>
           </li>
         </ul>
       </nav>

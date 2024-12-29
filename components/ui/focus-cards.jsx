@@ -19,7 +19,7 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => (
         <p className="font-bold mb-3">
           {card.def}
         </p>
-        <p className="text-sm font-semibold ">
+        <p className="text-sm truncate font-semibold ">
           {card.title}
         </p>
       </div>
