@@ -2,7 +2,6 @@ import { Geist, Geist_Mono, Fugaz_One, Open_Sans, League_Spartan } from "next/fo
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ClerkProvider } from "@clerk/nextjs";
 
 const openSans = Open_Sans({
   subsets: ["latin"]
@@ -34,7 +33,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
       <html lang="en">
         <body
           className={`${openSans.className} bg-[#dffdd1] text-black antialiased w-full max-w-[1600px] mx-auto text-sm sm:text-base min-h-screen flex flex-col`}
@@ -44,6 +42,5 @@ export default function RootLayout({ children }) {
           <Footer />
         </body>
       </html>
-    </ClerkProvider>
   );
 }

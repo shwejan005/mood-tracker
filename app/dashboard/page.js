@@ -1,10 +1,7 @@
 import { Calendar } from "@/components/ui/calendar";
 import { FocusCards } from '@/components/ui/focus-cards';
 import { TextShimmer } from '@/components/ui/text-shimmer';
-import { UserButton } from '@clerk/nextjs';
-import { auth } from '@clerk/nextjs/server';
 import { League_Spartan } from 'next/font/google';
-import Link from 'next/link';
 
 export const metadata = {
   title: "ZEN ⋅ Dashboard"
@@ -15,7 +12,7 @@ const leagueSpartan = League_Spartan({
 })
 
 export default async function Dashboard() {
-  const { userId } = await auth();
+  
   const details = {
     'Days': 14,
     'Time': '13:14:26',

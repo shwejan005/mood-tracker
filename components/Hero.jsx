@@ -1,6 +1,5 @@
 import React from 'react';
 import { Fugaz_One, League_Spartan } from 'next/font/google';
-import { SignInButton, SignUpButton } from '@clerk/nextjs';
 import Button from './Button'; // Your custom Button component
 
 const fugaz = Fugaz_One({
@@ -27,16 +26,12 @@ function Hero() {
       <div className="grid grid-cols-2 gap-4 w-fit mx-auto">
         {/* SignUpButton wrapped in your custom Button component */}
         <div className="w-full">
-          <SignUpButton aschild='true'>
-            <Button text="Sign Up" />
-          </SignUpButton>
+          <Button text="Sign Up" />
         </div>
 
         {/* SignInButton wrapped in your custom Button component */}
         <div className="w-full">
-          <SignInButton aschild='true'>
-            <Button text="Log In" dark />
-          </SignInButton>
+          <Button text="Log In" dark />
         </div>
       </div>
     </div>
