@@ -1,3 +1,4 @@
+import { Calendar } from "@/components/ui/calendar"
 import { FocusCards } from '@/components/ui/focus-cards';
 import { TextShimmer } from '@/components/ui/text-shimmer';
 import { UserButton } from '@clerk/nextjs';
@@ -69,14 +70,17 @@ export default async function Dashboard() {
       <div className=" rounded-xl min-h-screen flex flex-col items-center shadow-lg bg-[#edf8e8] opacity-80 py-10">
         <TextShimmer
           duration={3}
-          className='text-4xl font-bold text-center mb-14 [--base-color:theme(colors.green.600)] [--base-gradient-color:theme(colors.green.200)] dark:[--base-color:theme(colors.green.700)] dark:[--base-gradient-color:theme(colors.green.400)]'
+          className='text-4xl font-bold text-center mb-20 [--base-color:theme(colors.green.600)] [--base-gradient-color:theme(colors.green.200)] dark:[--base-color:theme(colors.green.700)] dark:[--base-gradient-color:theme(colors.green.400)]'
         >
           How are you <span className="textGradient">feeling</span> today?
         </TextShimmer>
+
         <FocusCards cards={cards} />
-      </div>
-      <div>
-        
+
+        <div className="mt-20 border-2 border-[#b4d4a7] rounded-xl bg-transparent hover:border-[#87a37a] transition-all duration-300">
+          <Calendar />
+        </div>
+
       </div>
     </div>
   );
