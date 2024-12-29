@@ -15,9 +15,14 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => (
     <div className="flex flex-col items-center justify-center h-full bg-[#d2f1c6]">
       {/* Display emoji directly */}
       <div className="text-6xl">{card.emoji}</div>
-      <p className="mt-8 text-center text-sm font-medium text-green-800">
-        {card.title}
-      </p>
+      <div className="text-green-800 mt-8 text-center "> 
+        <p className="font-bold mb-3">
+          {card.def}
+        </p>
+        <p className="text-sm font-semibold ">
+          {card.title}
+        </p>
+      </div>
     </div>
   </div>
 ));
@@ -31,6 +36,7 @@ export function FocusCards({ cards }) {
     <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
       {cards.map((card, index) => (
         <Card
+          def={card.def}
           key={card.title}
           card={card}
           index={index}

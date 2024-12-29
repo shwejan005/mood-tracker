@@ -25,27 +25,33 @@ export default async function Dashboard() {
   const cards = [
     {
       emoji: "🤩",
-      title: "Excited - Thrilled, enthusiastic, or overjoyed",
+      title: "Thrilled, enthusiastic, or overjoyed",
+      def : "Excited"
     },
     {
       emoji: "😊",
-      title: "Happy - Joyful, content, or positive",
+      title: "Joyful, content, or positive",
+      def : "Happy"
     },
     {
       emoji: "😐",
-      title: "Neutral - Indifferent, calm, or balanced",
+      title: "Indifferent, calm, or balanced",
+      def : "Neutral"
     },
     {
       emoji: "😔",
-      title: "Sad - Down, disappointed, or low energy",
+      title: "Down, disappointed, or low energy",
+      def : "Sad"
     },
     {
       emoji: "😡",
-      title: "Angry - Frustrated, annoyed, or upset",
+      title: "Frustrated, annoyed, or upset",
+      def : "Angry"
     },
     {
       emoji: "😰",
-      title: "Anxious - Nervous, stressed, or uneasy",
+      title: "Nervous, stressed, or uneasy",
+      def : "Anxious"
     },
   ];
 
@@ -74,11 +80,14 @@ export default async function Dashboard() {
         >
           How are you <span className="textGradient">feeling</span> today?
         </TextShimmer>
+        <div className="flex space-x-20">
 
-        <FocusCards cards={cards} />
+          <div className="mt-20 mb-14 border-2 border-[#b4d4a7] rounded-xl bg-transparent hover:border-[#87a37a] transition-all duration-300">
+            <Calendar />
+          </div>
+        
+         <FocusCards cards={cards} />
 
-        <div className="mt-20 border-2 border-[#b4d4a7] rounded-xl bg-transparent hover:border-[#87a37a] transition-all duration-300">
-          <Calendar />
         </div>
 
       </div>
