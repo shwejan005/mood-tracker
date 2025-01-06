@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Fugaz_One, Open_Sans, League_Spartan } from "next/fo
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/context/AuthContext";
 
 const openSans = Open_Sans({
   subsets: ["latin"]
@@ -33,7 +34,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-      <html lang="en">
+    <html lang="en">
+      <AuthProvider>
         <body
           className={`${openSans.className} bg-[#dffdd1] text-black antialiased w-full max-w-[1600px] mx-auto text-sm sm:text-base min-h-screen flex flex-col`}
         >
@@ -41,6 +43,7 @@ export default function RootLayout({ children }) {
             {children}
           <Footer />
         </body>
-      </html>
+      </AuthProvider>
+    </html>
   );
 }

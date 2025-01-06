@@ -1,6 +1,7 @@
 import React from 'react';
 import { Fugaz_One, League_Spartan } from 'next/font/google';
 import Button from './Button'; // Your custom Button component
+import Link from 'next/link';
 
 const fugaz = Fugaz_One({
   subsets: ['latin'],
@@ -24,15 +25,12 @@ function Hero() {
       </p>
 
       <div className="grid grid-cols-2 gap-4 w-fit mx-auto">
-        {/* SignUpButton wrapped in your custom Button component */}
-        <div className="w-full">
+        <Link href='/dashboard'>
           <Button text="Sign Up" />
-        </div>
-
-        {/* SignInButton wrapped in your custom Button component */}
-        <div className="w-full">
+        </Link>
+        <Link href='dashboard'>
           <Button text="Log In" dark />
-        </div>
+        </Link>
       </div>
     </div>
   );
